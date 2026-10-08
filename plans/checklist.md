@@ -126,13 +126,13 @@
 
 ---
 
-### [ ] Phase 8: Packaging, Distribution & Interactive Demo Playground ([`08-packaging-and-playground.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/08-packaging-and-playground.md))
-- [ ] Create root entry `index.ts` re-exporting all sub-modules.
-- [ ] Execute `tsup` build; verify output of ESM, CJS, `.d.ts`, and `styles.css`.
-- [ ] Build interactive Demo Playground app:
-  - [ ] Tab 1: Template Builder.
-  - [ ] Tab 2: Content Form Editor.
-  - [ ] Tab 3: Client Viewer.
-  - [ ] Preloaded presets for API Reference, Walkthrough, and Guides.
-- [ ] Author end-to-end integration test `tests/integration/e2e-workflow.test.tsx`.
-- [ ] **Gate Verification**: Execute `npm run test && npm run typecheck && npm run build` (Exit 0).
+### [x] Phase 8: Packaging, Distribution & Interactive Demo Playground ([`08-packaging-and-playground.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/08-packaging-and-playground.md))
+- [x] Create root entry `index.ts` re-exporting all sub-modules.
+- [x] Execute `tsup` build; verify output of ESM, CJS, `.d.ts`, and `styles.css`.
+- [x] Build interactive Demo Playground app:
+  - [x] Tab 1: Template Builder.
+  - [x] Tab 2: Content Form Editor.
+  - [x] Tab 3: Client Viewer.
+  - [x] Preloaded presets for API Reference, Walkthrough, and Guides.
+- [x] Author end-to-end integration test `tests/integration/e2e-workflow.test.tsx`.
+- [x] **Gate Verification**: Execute `npm run test && npm run typecheck && npm run build` (Exit 0).

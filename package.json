@@ -38,6 +38,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "vite playground",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:harness": "vitest run tests/harness",
@@ -68,6 +69,7 @@
     "@types/prismjs": "^1.26.4",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^25.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

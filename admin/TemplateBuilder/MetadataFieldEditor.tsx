@@ -8,9 +8,11 @@ interface MetadataFieldEditorProps {
 }
 
 export const MetadataFieldEditor: FC<MetadataFieldEditorProps> = ({
-  fields,
+  fields = [],
   onChange,
 }) => {
+  const safeFields = fields || [];
+
   const addField = () => {
     const newField: FieldDefinition = {
       id: `field-${Date.now().toString(36)}`,
@@ -18,16 +20,16 @@ export const MetadataFieldEditor: FC<MetadataFieldEditorProps> = ({
       type: 'string',
       required: false,
     };
-    onChange([...fields, newField]);
+    onChange([...safeFields, newField]);
   };
 
   const removeField = (index: number) => {
-    const updated = fields.filter((_, idx) => idx !== index);
+    const updated = safeFields.filter((_, idx) => idx !== index);
     onChange(updated);
   };
 
   const updateField = (index: number, updates: Partial<FieldDefinition>) => {
-    const updated = fields.map((f, idx) => (idx === index ? { ...f, ...updates } : f));
+    const updated = safeFields.map((f, idx) => (idx === index ? { ...f, ...updates } : f));
     onChange(updated);
   };
 
@@ -51,13 +53,13 @@ export const MetadataFieldEditor: FC<MetadataFieldEditorProps> = ({
         </button>
       </div>
 
-      {fields.length === 0 ? (
+      {safeFields.length === 0 ? (
         <div style={{ padding: '1.5rem', textAlign: 'center', color: 'var(--doc-sdk-text-muted)', border: '1px dashed var(--doc-sdk-border)', borderRadius: 'var(--doc-sdk-radius)' }}>
           No metadata fields configured. Click "Add Field" to define one.
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          {fields.map((field, idx) => (
+          {safeFields.map((field, idx) => (
             <div
               key={field.id}
               style={{

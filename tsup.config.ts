@@ -13,4 +13,13 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   external: ['react', 'react-dom'],
+  outExtension({ format }) {
+    return {
+      js: format === 'esm' ? '.mjs' : '.cjs',
+    };
+  },
+  onSuccess: async () => {
+    const fs = await import('fs');
+    fs.copyFileSync('client/styles/doc-sdk.css', 'dist/styles.css');
+  },
 });
