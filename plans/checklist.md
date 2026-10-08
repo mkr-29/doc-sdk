@@ -14,8 +14,8 @@
 | **1** | **Tooling, Build Setup & Test Harness** | ✅ Completed | `npm run typecheck && npm run test:harness` |
 | **2** | **Core Contracts, Schemas & Fixtures** | ✅ Completed | `npm run test:core && npm run typecheck` |
 | **3** | **Design Tokens & Block Primitives** | ✅ Completed | `npm run test:blocks && npm run typecheck` |
-| **4** | **Admin Template Builder Engine** | ⬜ Ready | `npm run test:builder && npm run typecheck` |
-| **5** | **Admin Content Form Editor Engine** | ⬜ Queued | `npm run test:editor && npm run typecheck` |
+| **4** | **Admin Template Builder Engine** | ✅ Completed | `npm run test:builder && npm run typecheck` |
+| **5** | **Admin Content Form Editor Engine** | ⬜ Ready | `npm run test:editor && npm run typecheck` |
 | **6** | **Client Viewer Engine & Layouts** | ⬜ Queued | `npm run test:client && npm run typecheck` |
 | **7** | **Headless Hooks & Navigation Suite** | ⬜ Queued | `npm run test:hooks && npm run typecheck` |
 | **8** | **Packaging, Distribution & Playground** | ⬜ Queued | `npm run test && npm run typecheck && npm run build` |
@@ -81,14 +81,14 @@
 
 ---
 
-### [ ] Phase 4: Admin Template Builder Engine ([`04-admin-template-builder.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/04-admin-template-builder.md))
-- [ ] Implement `<GeneralSettings/>`: ID, template name, and visual layout selector radio cards.
-- [ ] Implement `<MetadataFieldEditor/>`: Dynamic metadata field schema builder with type selectors and options.
-- [ ] Implement `<SectionList/>`: Section reordering, `isRepeatable` toggle, and `allowedBlocks` multi-select chips.
-- [ ] Implement `<JsonPreviewModal/>`: Real-time JSON viewer, clipboard copy, and import validator.
-- [ ] Implement top-level `<TemplateBuilder/>` container with `onChange` and `onSave` hooks.
-- [ ] Author test suite `tests/admin/builder/builder.test.tsx`.
-- [ ] **Gate Verification**: Execute `npm run test:builder && npm run typecheck` (Exit 0).
+### [x] Phase 4: Admin Template Builder Engine ([`04-admin-template-builder.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/04-admin-template-builder.md))
+- [x] Implement `<GeneralSettings/>`: ID, template name, and visual layout selector radio cards.
+- [x] Implement `<MetadataFieldEditor/>`: Dynamic metadata field schema builder with type selectors and options.
+- [x] Implement `<SectionList/>`: Section reordering, `isRepeatable` toggle, and `allowedBlocks` multi-select chips.
+- [x] Implement `<JsonPreviewModal/>`: Real-time JSON viewer, clipboard copy, and import validator.
+- [x] Implement top-level `<TemplateBuilder/>` container with `onChange` and `onSave` hooks.
+- [x] Author test suite `tests/admin/builder/builder.test.tsx`.
+- [x] **Gate Verification**: Execute `npm run test:builder && npm run typecheck` (Exit 0).
 
 ---
 

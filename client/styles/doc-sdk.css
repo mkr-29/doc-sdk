@@ -387,3 +387,145 @@
   color: var(--doc-sdk-text-muted);
   line-height: 1.5;
 }
+
+/* UI Form & Controls (Shared Admin Suite) */
+.doc-sdk-card {
+  background-color: var(--doc-sdk-bg);
+  border: 1px solid var(--doc-sdk-border);
+  border-radius: var(--doc-sdk-radius);
+  padding: 1.25rem;
+  box-shadow: var(--doc-sdk-shadow-sm);
+  margin-bottom: 1rem;
+}
+
+.doc-sdk-form-group {
+  margin-bottom: 1rem;
+}
+
+.doc-sdk-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--doc-sdk-text);
+  margin-bottom: 0.35rem;
+}
+
+.doc-sdk-input,
+.doc-sdk-select,
+.doc-sdk-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--doc-sdk-border);
+  border-radius: var(--doc-sdk-radius-sm);
+  font-family: var(--doc-sdk-font-sans);
+  font-size: 0.875rem;
+  color: var(--doc-sdk-text);
+  background-color: var(--doc-sdk-bg);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.doc-sdk-input:focus,
+.doc-sdk-select:focus,
+.doc-sdk-textarea:focus {
+  outline: none;
+  border-color: var(--doc-sdk-border-focus);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.doc-sdk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--doc-sdk-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--doc-sdk-font-sans);
+}
+
+.doc-sdk-btn-primary {
+  background-color: var(--doc-sdk-primary);
+  color: #ffffff;
+}
+
+.doc-sdk-btn-primary:hover {
+  background-color: var(--doc-sdk-primary-hover);
+}
+
+.doc-sdk-btn-secondary {
+  background-color: var(--doc-sdk-surface);
+  border-color: var(--doc-sdk-border);
+  color: var(--doc-sdk-text);
+}
+
+.doc-sdk-btn-secondary:hover {
+  background-color: var(--doc-sdk-surface-hover);
+}
+
+.doc-sdk-btn-danger {
+  background-color: var(--doc-sdk-danger-bg);
+  border-color: var(--doc-sdk-danger-border);
+  color: var(--doc-sdk-danger);
+}
+
+.doc-sdk-btn-danger:hover {
+  background-color: #fee2e2;
+}
+
+.doc-sdk-btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.doc-sdk-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.doc-sdk-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--doc-sdk-surface);
+  border: 1px solid var(--doc-sdk-border);
+  color: var(--doc-sdk-text);
+  cursor: pointer;
+}
+
+.doc-sdk-chip-active {
+  background-color: var(--doc-sdk-primary-light);
+  border-color: var(--doc-sdk-primary);
+  color: var(--doc-sdk-primary);
+}
+
+/* Modal */
+.doc-sdk-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.doc-sdk-modal-content {
+  background-color: var(--doc-sdk-bg);
+  border-radius: var(--doc-sdk-radius-lg);
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--doc-sdk-shadow);
+}
+
