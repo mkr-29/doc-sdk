@@ -13,8 +13,8 @@
 | **0** | **Project Setup & Agent Operating Rules** | ✅ Completed | `git status && git log -1` |
 | **1** | **Tooling, Build Setup & Test Harness** | ✅ Completed | `npm run typecheck && npm run test:harness` |
 | **2** | **Core Contracts, Schemas & Fixtures** | ✅ Completed | `npm run test:core && npm run typecheck` |
-| **3** | **Design Tokens & Block Primitives** | ⬜ Ready | `npm run test:blocks && npm run typecheck` |
-| **4** | **Admin Template Builder Engine** | ⬜ Queued | `npm run test:builder && npm run typecheck` |
+| **3** | **Design Tokens & Block Primitives** | ✅ Completed | `npm run test:blocks && npm run typecheck` |
+| **4** | **Admin Template Builder Engine** | ⬜ Ready | `npm run test:builder && npm run typecheck` |
 | **5** | **Admin Content Form Editor Engine** | ⬜ Queued | `npm run test:editor && npm run typecheck` |
 | **6** | **Client Viewer Engine & Layouts** | ⬜ Queued | `npm run test:client && npm run typecheck` |
 | **7** | **Headless Hooks & Navigation Suite** | ⬜ Queued | `npm run test:hooks && npm run typecheck` |
@@ -67,17 +67,17 @@
 
 ---
 
-### [ ] Phase 3: Design Tokens, CSS Architecture & Block Primitives ([`03-block-component-primitives.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/03-block-component-primitives.md))
-- [ ] Create standalone themeable CSS system in `client/styles/doc-sdk.css` using `--doc-sdk-*` variables.
-- [ ] Implement `<TextBlock/>`: Paragraph, lead, body, caption typography.
-- [ ] Implement `<MarkdownBlock/>`: GFM parsing via `markdown-to-jsx` with auto-slugified heading anchors.
-- [ ] Implement `<CodeSampleBlock/>`: `prismjs` syntax highlighter with language badges and copy-to-clipboard button.
-- [ ] Implement `<ApiEndpointBlock/>`: Method badge (`GET`, `POST`, `PUT`, `DELETE`), path header, query/header/body parameter tables, response status cards.
-- [ ] Implement `<CalloutBlock/>`: Alert banners with Lucide icons (`info`, `warning`, `tip`, `danger`).
-- [ ] Implement `<StepperBlock/>`: Step navigation, active step indicators, collapsible/sequential views.
-- [ ] Create `client/blocks/defaultRegistry.ts` mapping block types to component renderers.
-- [ ] Author test suite `tests/blocks/blocks.test.tsx`.
-- [ ] **Gate Verification**: Execute `npm run test:blocks && npm run typecheck` (Exit 0).
+### [x] Phase 3: Design Tokens, CSS Architecture & Block Primitives ([`03-block-component-primitives.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/03-block-component-primitives.md))
+- [x] Create standalone themeable CSS system in `client/styles/doc-sdk.css` using `--doc-sdk-*` variables.
+- [x] Implement `<TextBlock/>`: Paragraph, lead, body, caption typography.
+- [x] Implement `<MarkdownBlock/>`: GFM parsing via `markdown-to-jsx` with auto-slugified heading anchors.
+- [x] Implement `<CodeSampleBlock/>`: `prismjs` syntax highlighter with language badges and copy-to-clipboard button.
+- [x] Implement `<ApiEndpointBlock/>`: Method badge (`GET`, `POST`, `PUT`, `DELETE`), path header, query/header/body parameter tables, response status cards.
+- [x] Implement `<CalloutBlock/>`: Alert banners with Lucide icons (`info`, `warning`, `tip`, `danger`).
+- [x] Implement `<StepperBlock/>`: Step navigation, active step indicators, collapsible/sequential views.
+- [x] Create `client/blocks/defaultRegistry.ts` mapping block types to component renderers.
+- [x] Author test suite `tests/blocks/blocks.test.tsx`.
+- [x] **Gate Verification**: Execute `npm run test:blocks && npm run typecheck` (Exit 0).
 
 ---
 
