@@ -16,8 +16,8 @@
 | **3** | **Design Tokens & Block Primitives** | ✅ Completed | `npm run test:blocks && npm run typecheck` |
 | **4** | **Admin Template Builder Engine** | ✅ Completed | `npm run test:builder && npm run typecheck` |
 | **5** | **Admin Content Form Editor Engine** | ✅ Completed | `npm run test:editor && npm run typecheck` |
-| **6** | **Client Viewer Engine & Layouts** | ⬜ Ready | `npm run test:client && npm run typecheck` |
-| **7** | **Headless Hooks & Navigation Suite** | ⬜ Queued | `npm run test:hooks && npm run typecheck` |
+| **6** | **Client Viewer Engine & Layouts** | ✅ Completed | `npm run test:client && npm run typecheck` |
+| **7** | **Headless Hooks & Navigation Suite** | ⬜ Ready | `npm run test:hooks && npm run typecheck` |
 | **8** | **Packaging, Distribution & Playground** | ⬜ Queued | `npm run test && npm run typecheck && npm run build` |
 
 ---
@@ -105,14 +105,14 @@
 
 ---
 
-### [ ] Phase 6: Client Viewer Engine & Responsive Layouts ([`06-client-viewer-engine-and-layouts.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/06-client-viewer-engine-and-layouts.md))
-- [ ] Implement `<SingleColumnLayout/>`: Centered document layout for walkthroughs and articles.
-- [ ] Implement `<TwoColumnLayout/>`: Left navigation sidebar, center document body, right sticky TOC.
-- [ ] Implement `<SideBySideCodeLayout/>`: API layout (prose left, sticky code/payloads right).
-- [ ] Implement `<BlockRenderer/>`: Registry resolver with error boundary and unknown block fallback.
-- [ ] Implement top-level `<DocRenderer/>` orchestrator with support for `blockRegistry` and `customLayouts` overrides.
-- [ ] Author test suite `tests/client/renderer.test.tsx`.
-- [ ] **Gate Verification**: Execute `npm run test:client && npm run typecheck` (Exit 0).
+### [x] Phase 6: Client Viewer Engine & Responsive Layouts ([`06-client-viewer-engine-and-layouts.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/06-client-viewer-engine-and-layouts.md))
+- [x] Implement `<SingleColumnLayout/>`: Centered document layout for walkthroughs and articles.
+- [x] Implement `<TwoColumnLayout/>`: Left navigation sidebar, center document body, right sticky TOC.
+- [x] Implement `<SideBySideCodeLayout/>`: API layout (prose left, sticky code/payloads right).
+- [x] Implement `<BlockRenderer/>`: Registry resolver with error boundary and unknown block fallback.
+- [x] Implement top-level `<DocRenderer/>` orchestrator with support for `blockRegistry` and `customLayouts` overrides.
+- [x] Author test suite `tests/client/renderer.test.tsx`.
+- [x] **Gate Verification**: Execute `npm run test:client && npm run typecheck` (Exit 0).
 
 ---
 

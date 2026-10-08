@@ -529,3 +529,119 @@
   box-shadow: var(--doc-sdk-shadow);
 }
 
+/* Layout Engine Styles */
+.doc-sdk-layout-single-column {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.doc-sdk-layout-two-column {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 220px;
+  gap: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .doc-sdk-layout-two-column {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+  .doc-sdk-toc-right {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc-sdk-layout-two-column {
+    grid-template-columns: 1fr;
+  }
+  .doc-sdk-sidebar-left {
+    display: none;
+  }
+}
+
+.doc-sdk-sidebar-left {
+  position: sticky;
+  top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+  border-right: 1px solid var(--doc-sdk-border);
+}
+
+.doc-sdk-toc-right {
+  position: sticky;
+  top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--doc-sdk-border);
+}
+
+.doc-sdk-nav-link {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  color: var(--doc-sdk-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-radius: var(--doc-sdk-radius-sm);
+  transition: all 0.15s ease;
+}
+
+.doc-sdk-nav-link:hover {
+  color: var(--doc-sdk-primary);
+  background-color: var(--doc-sdk-surface-hover);
+}
+
+.doc-sdk-nav-link-active {
+  color: var(--doc-sdk-primary);
+  background-color: var(--doc-sdk-primary-light);
+  font-weight: 600;
+}
+
+/* Side-by-Side Code Layout */
+.doc-sdk-layout-side-by-side {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.doc-sdk-sbs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  align-items: start;
+  border-bottom: 1px solid var(--doc-sdk-border);
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 960px) {
+  .doc-sdk-sbs-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-sdk-col-code {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.doc-sdk-section-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--doc-sdk-border);
+}
+
+.doc-sdk-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--doc-sdk-text);
+  margin: 0;
+}
+
+
