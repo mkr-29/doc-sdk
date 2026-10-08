@@ -116,13 +116,13 @@
 
 ---
 
-### [ ] Phase 7: Headless Hooks & Navigation Suite ([`07-headless-hooks-and-navigation.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/07-headless-hooks-and-navigation.md))
-- [ ] Implement `useTableOfContents`: Extracts headings from markdown and text blocks with slugs and nesting levels.
-- [ ] Implement `useScrollSpy`: Observes headings on scroll and tracks active heading ID.
-- [ ] Implement `useDocSearch`: In-memory full-text search indexing across sections and blocks.
-- [ ] Implement `useAnchorScroll`: Smooth anchor scrolling with sticky header offset.
-- [ ] Author test suite `tests/hooks/hooks.test.ts`.
-- [ ] **Gate Verification**: Execute `npm run test:hooks && npm run typecheck` (Exit 0).
+### [x] Phase 7: Headless Hooks & Navigation Suite ([`07-headless-hooks-and-navigation.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/07-headless-hooks-and-navigation.md))
+- [x] Implement `useTableOfContents`: Extracts headings from markdown and text blocks with slugs and nesting levels.
+- [x] Implement `useScrollSpy`: Observes headings on scroll and tracks active heading ID.
+- [x] Implement `useDocSearch`: In-memory full-text search indexing across sections and blocks.
+- [x] Implement `useAnchorScroll`: Smooth anchor scrolling with sticky header offset.
+- [x] Author test suite `tests/hooks/hooks.test.ts`.
+- [x] **Gate Verification**: Execute `npm run test:hooks && npm run typecheck` (Exit 0).
 
 ---
 
