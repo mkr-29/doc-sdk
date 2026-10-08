@@ -12,8 +12,8 @@
 | :---: | :--- | :---: | :--- |
 | **0** | **Project Setup & Agent Operating Rules** | ✅ Completed | `git status && git log -1` |
 | **1** | **Tooling, Build Setup & Test Harness** | ✅ Completed | `npm run typecheck && npm run test:harness` |
-| **2** | **Core Contracts, Schemas & Fixtures** | ⬜ Ready | `npm run test:core && npm run typecheck` |
-| **3** | **Design Tokens & Block Primitives** | ⬜ Queued | `npm run test:blocks && npm run typecheck` |
+| **2** | **Core Contracts, Schemas & Fixtures** | ✅ Completed | `npm run test:core && npm run typecheck` |
+| **3** | **Design Tokens & Block Primitives** | ⬜ Ready | `npm run test:blocks && npm run typecheck` |
 | **4** | **Admin Template Builder Engine** | ⬜ Queued | `npm run test:builder && npm run typecheck` |
 | **5** | **Admin Content Form Editor Engine** | ⬜ Queued | `npm run test:editor && npm run typecheck` |
 | **6** | **Client Viewer Engine & Layouts** | ⬜ Queued | `npm run test:client && npm run typecheck` |
@@ -44,26 +44,26 @@
 
 ---
 
-### [ ] Phase 2: Core Data Contracts, Schemas & Canonical Fixtures ([`02-core-contracts-and-schemas.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/02-core-contracts-and-schemas.md))
-- [ ] Implement `core/types.ts`:
-  - [ ] `BlockType` union and type guards.
-  - [ ] `FieldDefinition` and `FieldType`.
-  - [ ] `SectionDefinition`.
-  - [ ] `DocTemplate` and `LayoutType`.
-  - [ ] `DocContent`, `SectionContent`, and `BlockContent`.
-- [ ] Implement `core/schemas.ts`:
-  - [ ] Zod runtime schemas matching all TypeScript interfaces.
-  - [ ] Typed payload schemas for `text`, `markdown`, `code_sample`, `api_endpoint`, `callout`, `stepper`.
-- [ ] Implement `core/validation.ts`:
-  - [ ] `validateTemplate`, `safeValidateTemplate`, `validateContent`, `safeValidateContent`, `validateBlockData`.
-- [ ] Implement `core/registry.ts`:
-  - [ ] Type contracts for `BlockRegistry` and `LayoutRegistry`.
-- [ ] Create canonical fixtures:
-  - [ ] `core/fixtures/mockTemplates.ts` (`apiReference`, `walkthrough`, `sideBySide`).
-  - [ ] `core/fixtures/mockContents.ts` (matching data content for each template).
-- [ ] Create barrel export `core/index.ts`.
-- [ ] Author test suite `tests/core/schemas.test.ts`.
-- [ ] **Gate Verification**: Execute `npm run test:core && npm run typecheck` (Exit 0).
+### [x] Phase 2: Core Data Contracts, Schemas & Canonical Fixtures ([`02-core-contracts-and-schemas.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/02-core-contracts-and-schemas.md))
+- [x] Implement `core/types.ts`:
+  - [x] `BlockType` union and type guards.
+  - [x] `FieldDefinition` and `FieldType`.
+  - [x] `SectionDefinition`.
+  - [x] `DocTemplate` and `LayoutType`.
+  - [x] `DocContent`, `SectionContent`, and `BlockContent`.
+- [x] Implement `core/schemas.ts`:
+  - [x] Zod runtime schemas matching all TypeScript interfaces.
+  - [x] Typed payload schemas for `text`, `markdown`, `code_sample`, `api_endpoint`, `callout`, `stepper`.
+- [x] Implement `core/validation.ts`:
+  - [x] `validateTemplate`, `safeValidateTemplate`, `validateContent`, `safeValidateContent`, `validateBlockData`.
+- [x] Implement `core/registry.ts`:
+  - [x] Type contracts for `BlockRegistry` and `LayoutRegistry`.
+- [x] Create canonical fixtures:
+  - [x] `core/fixtures/mockTemplates.ts` (`apiReference`, `walkthrough`, `sideBySide`).
+  - [x] `core/fixtures/mockContents.ts` (matching data content for each template).
+- [x] Create barrel export `core/index.ts`.
+- [x] Author test suite `tests/core/schemas.test.ts`.
+- [x] **Gate Verification**: Execute `npm run test:core && npm run typecheck` (Exit 0).
 
 ---
 
