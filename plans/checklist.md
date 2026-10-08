@@ -11,8 +11,8 @@
 | Phase | Category | Status | Automated Gatekeeper Command |
 | :---: | :--- | :---: | :--- |
 | **0** | **Project Setup & Agent Operating Rules** | ✅ Completed | `git status && git log -1` |
-| **1** | **Tooling, Build Setup & Test Harness** | ⬜ Ready | `npm run typecheck && npm run test:harness` |
-| **2** | **Core Contracts, Schemas & Fixtures** | ⬜ Queued | `npm run test:core && npm run typecheck` |
+| **1** | **Tooling, Build Setup & Test Harness** | ✅ Completed | `npm run typecheck && npm run test:harness` |
+| **2** | **Core Contracts, Schemas & Fixtures** | ⬜ Ready | `npm run test:core && npm run typecheck` |
 | **3** | **Design Tokens & Block Primitives** | ⬜ Queued | `npm run test:blocks && npm run typecheck` |
 | **4** | **Admin Template Builder Engine** | ⬜ Queued | `npm run test:builder && npm run typecheck` |
 | **5** | **Admin Content Form Editor Engine** | ⬜ Queued | `npm run test:editor && npm run typecheck` |
@@ -34,13 +34,13 @@
 
 ---
 
-### [ ] Phase 1: Tooling, Build Setup & Automated Test Harness ([`01-tooling-and-test-harness.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/01-tooling-and-test-harness.md))
-- [ ] Initialize `package.json` with locked dependencies (`zod`, `lucide-react`, `prismjs`, `markdown-to-jsx`, `clsx`, `vitest`, `tsup`).
-- [ ] Configure TypeScript (`tsconfig.json`) with strict mode, React JSX, and path aliases.
-- [ ] Configure Vitest test runner (`vitest.config.ts`) with JSDOM and `@testing-library/react`.
-- [ ] Configure `tsup.config.ts` for multi-entry ESM, CJS, and `.d.ts` bundles.
-- [ ] Create `tests/setup.ts` and test harness smoke test (`tests/harness/smoke.test.ts`).
-- [ ] **Gate Verification**: Execute `npm run typecheck && npm run test:harness` (Exit 0).
+### [x] Phase 1: Tooling, Build Setup & Automated Test Harness ([`01-tooling-and-test-harness.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/01-tooling-and-test-harness.md))
+- [x] Initialize `package.json` with locked dependencies (`zod`, `lucide-react`, `prismjs`, `markdown-to-jsx`, `clsx`, `vitest`, `tsup`).
+- [x] Configure TypeScript (`tsconfig.json`) with strict mode, React JSX, and path aliases.
+- [x] Configure Vitest test runner (`vitest.config.ts`) with JSDOM and `@testing-library/react`.
+- [x] Configure `tsup.config.ts` for multi-entry ESM, CJS, and `.d.ts` bundles.
+- [x] Create `tests/setup.ts` and test harness smoke test (`tests/harness/smoke.test.ts`).
+- [x] **Gate Verification**: Execute `npm run typecheck && npm run test:harness` (Exit 0).
 
 ---
 
