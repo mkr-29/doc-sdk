@@ -8,6 +8,7 @@
 4. **Hooks** (`hooks/`): Table of contents parsing, scroll spy, search.
 
 ## Key Rules & Architectural Invariants
+- **Plan-Driven Development**: Always check [`plans/checklist.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/checklist.md) and the corresponding plan in `plans/` before starting work. Keep the checklist up to date as tasks complete.
 - **Layer Separation**: `core/` has zero UI dependencies. `client/` does not import `admin/`.
 - **Validation**: All data entering/exiting the SDK must be validated against Zod schemas.
 - **Key Stability**: Dynamic block lists in the editor must use unique block IDs (`block.id`) as React keys to prevent focus loss and DOM thrashing.

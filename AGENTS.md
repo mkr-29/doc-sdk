@@ -92,6 +92,15 @@ doc-sdk/
 │   ├── useScrollSpy.ts         # Active section tracking on scroll
 │   ├── useDocSearch.ts         # In-memory document search indexing
 │   └── index.ts                # Hooks public exports
+├── plans/                      # Categorized execution roadmaps & checklist
+│   ├── checklist.md            # Master checklist & execution tracker
+│   ├── 01-core-contracts-and-schemas.md
+│   ├── 02-block-component-primitives.md
+│   ├── 03-admin-template-builder.md
+│   ├── 04-admin-content-editor.md
+│   ├── 05-client-viewer-engine-and-layouts.md
+│   ├── 06-headless-hooks-and-navigation.md
+│   └── 07-packaging-testing-and-playground.md
 ├── tests/                      # Automated test suite (unit, integration, contracts)
 ├── .agents/                    # Agent rules, workflows, and prompts
 │   └── rules/                  # Modular agent rules
@@ -161,25 +170,29 @@ export interface DocContent {
 
 ## 4. Coding Standards & Agent Rules
 
-1. **Strict TypeScript & Runtime Validation**:
+1. **Plan-Driven Development & Checklist Synchronization**:
+   - Before implementing any feature, agents MUST consult [`plans/checklist.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/checklist.md) and the corresponding category plan in `plans/`.
+   - Update the checklist immediately upon task completion. Do not start subsequent phases with incomplete preceding milestones.
+
+2. **Strict TypeScript & Runtime Validation**:
    - Every contract in `core/types.ts` must have an identical schema in `core/schemas.ts` defined with Zod.
    - Use `z.infer<typeof ...>` to guarantee type alignment.
    - Never use `any` in core definitions. Where block payload is dynamic, use `Record<string, unknown>` with typed generics or schemas per `BlockType`.
 
-2. **No Leaky Abstractions**:
+3. **No Leaky Abstractions**:
    - `core/` MUST NEVER import from `admin/`, `client/`, or React UI packages.
    - `client/` MUST NEVER import from `admin/`.
    - `admin/` may import types/schemas from `core/` and optionally reusable block renderers from `client/` for preview mode.
 
-3. **DOM Stability & Anti-Thrashing**:
+4. **DOM Stability & Anti-Thrashing**:
    - Form inputs and dynamic block editors must maintain stable React component keys (`block.id`, not array indices).
    - Never trigger unneeded remounts or full re-renders of the content editor when editing a single block.
 
-4. **Extensibility via Registries**:
+5. **Extensibility via Registries**:
    - Always allow developers using the SDK to pass a custom `customBlocks: Partial<Record<BlockType, React.FC<any>>>` or register brand-new block types dynamically.
    - Provide high-quality fallback handling when an unregistered block type is encountered.
 
-5. **Accessibility & Semantic HTML**:
+6. **Accessibility & Semantic HTML**:
    - Client viewer layouts and blocks must output semantic HTML (`<article>`, `<section>`, `<nav>`, `<h1>`-`<h6>`, `<aside>`).
    - Steppers, tabs, and code blocks must have ARIA roles and keyboard navigation.
 
