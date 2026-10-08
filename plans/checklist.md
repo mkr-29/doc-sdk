@@ -15,8 +15,8 @@
 | **2** | **Core Contracts, Schemas & Fixtures** | ✅ Completed | `npm run test:core && npm run typecheck` |
 | **3** | **Design Tokens & Block Primitives** | ✅ Completed | `npm run test:blocks && npm run typecheck` |
 | **4** | **Admin Template Builder Engine** | ✅ Completed | `npm run test:builder && npm run typecheck` |
-| **5** | **Admin Content Form Editor Engine** | ⬜ Ready | `npm run test:editor && npm run typecheck` |
-| **6** | **Client Viewer Engine & Layouts** | ⬜ Queued | `npm run test:client && npm run typecheck` |
+| **5** | **Admin Content Form Editor Engine** | ✅ Completed | `npm run test:editor && npm run typecheck` |
+| **6** | **Client Viewer Engine & Layouts** | ⬜ Ready | `npm run test:client && npm run typecheck` |
 | **7** | **Headless Hooks & Navigation Suite** | ⬜ Queued | `npm run test:hooks && npm run typecheck` |
 | **8** | **Packaging, Distribution & Playground** | ⬜ Queued | `npm run test && npm run typecheck && npm run build` |
 
@@ -92,16 +92,16 @@
 
 ---
 
-### [ ] Phase 5: Admin Content Form Editor Engine ([`05-admin-content-editor.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/05-admin-content-editor.md))
-- [ ] Implement `<MetaPanel/>`: Dynamic inputs mapped to `template.metadataFields`.
-- [ ] Implement `<SectionForm/>`: Section container supporting repeatable instances and block lists.
-- [ ] Implement `<BlockInjector/>`: Context-aware "Add Block" dropdown strictly filtered by `section.allowedBlocks`.
-- [ ] Implement `<BlockItemCard/>`: Card wrapper with move up/down, duplicate, delete, and type badge.
-- [ ] Implement block sub-editors (`TextBlockEditor`, `MarkdownBlockEditor`, `CodeSampleBlockEditor`, `ApiEndpointBlockEditor`, `CalloutBlockEditor`, `StepperBlockEditor`).
-- [ ] Enforce key stability (`key={block.id}`) and debounced input updates to prevent focus loss.
-- [ ] Implement top-level `<DocContentEditor/>` container with Zod validation feedback.
-- [ ] Author test suite `tests/admin/editor/editor.test.tsx`.
-- [ ] **Gate Verification**: Execute `npm run test:editor && npm run typecheck` (Exit 0).
+### [x] Phase 5: Admin Content Form Editor Engine ([`05-admin-content-editor.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/05-admin-content-editor.md))
+- [x] Implement `<MetaPanel/>`: Dynamic inputs mapped to `template.metadataFields`.
+- [x] Implement `<SectionForm/>`: Section container supporting repeatable instances and block lists.
+- [x] Implement `<BlockInjector/>`: Context-aware "Add Block" dropdown strictly filtered by `section.allowedBlocks`.
+- [x] Implement `<BlockItemCard/>`: Card wrapper with move up/down, duplicate, delete, and type badge.
+- [x] Implement block sub-editors (`TextBlockEditor`, `MarkdownBlockEditor`, `CodeSampleBlockEditor`, `ApiEndpointBlockEditor`, `CalloutBlockEditor`, `StepperBlockEditor`).
+- [x] Enforce key stability (`key={block.id}`) and debounced input updates to prevent focus loss.
+- [x] Implement top-level `<DocContentEditor/>` container with Zod validation feedback.
+- [x] Author test suite `tests/admin/editor/editor.test.tsx`.
+- [x] **Gate Verification**: Execute `npm run test:editor && npm run typecheck` (Exit 0).
 
 ---
 
