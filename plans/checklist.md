@@ -1,40 +1,50 @@
-# Master Project Checklist & Execution Tracker
+# Master Project Checklist & Automated Execution Tracker
 
 > **Current Status**: Active  
 > **Progress**: Phase 0 Complete | Phase 1 Ready for Implementation  
-> **Rule Requirement**: Agents and developers must check and update this checklist when completing tasks and before moving to subsequent phases.
+> **Autonomous Rule**: Autonomous agents must follow the [Auto-Development Protocol](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/auto-development-protocol.md). Each phase has an explicit, automated terminal gate command. Never mark a task `[x]` until the gate command exits with code 0.
 
 ---
 
-## High-Level Roadmap Overview
+## High-Level Roadmap Overview & Automated Gates
 
-| Phase | Category | Status | Target Deliverables |
+| Phase | Category | Status | Automated Gatekeeper Command |
 | :---: | :--- | :---: | :--- |
-| **0** | **Project Setup & Agent Operating Rules** | ✅ Completed | Architecture definitions, git setup, agent rules, plans directory |
-| **1** | **Core Data Contracts & Validation** | ⬜ Not Started | Zod schemas, TypeScript types, validation helpers, unit tests |
-| **2** | **Block Component Primitives** | ⬜ Not Started | Headless & UI block library (`text`, `markdown`, `code_sample`, `api_endpoint`, `callout`, `stepper`) |
-| **3** | **Admin Template Builder** | ⬜ Not Started | `<TemplateBuilder/>`, section manager, metadata configurator, layout selector, JSON exporter |
-| **4** | **Admin Content Form Editor** | ⬜ Not Started | `<DocContentEditor/>`, dynamic field mapping, block injector, block reordering/deletion |
-| **5** | **Client Viewer Engine & Layouts** | ⬜ Not Started | `<DocRenderer/>`, `SingleColumnLayout`, `TwoColumnLayout`, `SideBySideCodeLayout`, Block Registry |
-| **6** | **Headless Hooks & Navigation** | ⬜ Not Started | `useTableOfContents`, `useScrollSpy`, `useDocSearch`, anchor scroll handlers |
-| **7** | **Packaging, Testing & Demo Playground** | ⬜ Not Started | ESM/CJS bundling, TypeScript declarations, test suites, interactive preview app |
+| **0** | **Project Setup & Agent Operating Rules** | ✅ Completed | `git status && git log -1` |
+| **1** | **Tooling, Build Setup & Test Harness** | ⬜ Ready | `npm run typecheck && npm run test:harness` |
+| **2** | **Core Contracts, Schemas & Fixtures** | ⬜ Queued | `npm run test:core && npm run typecheck` |
+| **3** | **Design Tokens & Block Primitives** | ⬜ Queued | `npm run test:blocks && npm run typecheck` |
+| **4** | **Admin Template Builder Engine** | ⬜ Queued | `npm run test:builder && npm run typecheck` |
+| **5** | **Admin Content Form Editor Engine** | ⬜ Queued | `npm run test:editor && npm run typecheck` |
+| **6** | **Client Viewer Engine & Layouts** | ⬜ Queued | `npm run test:client && npm run typecheck` |
+| **7** | **Headless Hooks & Navigation Suite** | ⬜ Queued | `npm run test:hooks && npm run typecheck` |
+| **8** | **Packaging, Distribution & Playground** | ⬜ Queued | `npm run test && npm run typecheck && npm run build` |
 
 ---
 
 ## Detailed Phase Breakdown & Tasks
 
 ### [x] Phase 0: Project Initialization & Operating Rules
-- [x] Configure repository remote, SSH keys, and git author identity.
+- [x] Configure repository remote, SSH keys, and git author identity (`mkr-29`).
 - [x] Create comprehensive architectural guidelines ([`AGENTS.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/AGENTS.md)).
 - [x] Create agent reference guides ([`CLAUDE.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/CLAUDE.md), [`GEMINI.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/GEMINI.md)).
 - [x] Create modular agent rule files in [`.agents/rules/`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/.agents/rules/).
 - [x] Create categorized execution plans in [`plans/`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/).
-- [x] Enforce plan-driven development in agent rules.
+- [x] Establish Auto-Development & Autonomous Testing Protocol ([`auto-development-protocol.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/auto-development-protocol.md)).
 
 ---
 
-### [ ] Phase 1: Core Data Contracts & Validation ([`01-core-contracts-and-schemas.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/01-core-contracts-and-schemas.md))
-- [ ] Initialize `package.json`, TypeScript config (`tsconfig.json`), and install core dependencies (`zod`).
+### [ ] Phase 1: Tooling, Build Setup & Automated Test Harness ([`01-tooling-and-test-harness.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/01-tooling-and-test-harness.md))
+- [ ] Initialize `package.json` with locked dependencies (`zod`, `lucide-react`, `prismjs`, `markdown-to-jsx`, `clsx`, `vitest`, `tsup`).
+- [ ] Configure TypeScript (`tsconfig.json`) with strict mode, React JSX, and path aliases.
+- [ ] Configure Vitest test runner (`vitest.config.ts`) with JSDOM and `@testing-library/react`.
+- [ ] Configure `tsup.config.ts` for multi-entry ESM, CJS, and `.d.ts` bundles.
+- [ ] Create `tests/setup.ts` and test harness smoke test (`tests/harness/smoke.test.ts`).
+- [ ] **Gate Verification**: Execute `npm run typecheck && npm run test:harness` (Exit 0).
+
+---
+
+### [ ] Phase 2: Core Data Contracts, Schemas & Canonical Fixtures ([`02-core-contracts-and-schemas.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/02-core-contracts-and-schemas.md))
 - [ ] Implement `core/types.ts`:
   - [ ] `BlockType` union and type guards.
   - [ ] `FieldDefinition` and `FieldType`.
@@ -42,90 +52,87 @@
   - [ ] `DocTemplate` and `LayoutType`.
   - [ ] `DocContent`, `SectionContent`, and `BlockContent`.
 - [ ] Implement `core/schemas.ts`:
-  - [ ] Zod schemas matching all TypeScript interfaces.
-  - [ ] Block data schemas for each block type (`text`, `markdown`, `code_sample`, `api_endpoint`, `callout`, `stepper`).
-  - [ ] Schema validation utilities (`validateTemplate`, `validateContent`, `safeParseTemplate`, `safeParseContent`).
+  - [ ] Zod runtime schemas matching all TypeScript interfaces.
+  - [ ] Typed payload schemas for `text`, `markdown`, `code_sample`, `api_endpoint`, `callout`, `stepper`.
+- [ ] Implement `core/validation.ts`:
+  - [ ] `validateTemplate`, `safeValidateTemplate`, `validateContent`, `safeValidateContent`, `validateBlockData`.
 - [ ] Implement `core/registry.ts`:
-  - [ ] Type definitions for block registry and layout registry.
-  - [ ] Default registry token definitions.
-- [ ] Write unit tests for core validation (`tests/core/schemas.test.ts`).
+  - [ ] Type contracts for `BlockRegistry` and `LayoutRegistry`.
+- [ ] Create canonical fixtures:
+  - [ ] `core/fixtures/mockTemplates.ts` (`apiReference`, `walkthrough`, `sideBySide`).
+  - [ ] `core/fixtures/mockContents.ts` (matching data content for each template).
+- [ ] Create barrel export `core/index.ts`.
+- [ ] Author test suite `tests/core/schemas.test.ts`.
+- [ ] **Gate Verification**: Execute `npm run test:core && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 2: Block Component Primitives ([`02-block-component-primitives.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/02-block-component-primitives.md))
-- [ ] Setup UI dependencies (React, Lucide icons, Prism/Shiki, unified/remark or markdown-to-jsx).
+### [ ] Phase 3: Design Tokens, CSS Architecture & Block Primitives ([`03-block-component-primitives.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/03-block-component-primitives.md))
+- [ ] Create standalone themeable CSS system in `client/styles/doc-sdk.css` using `--doc-sdk-*` variables.
 - [ ] Implement `<TextBlock/>`: Paragraph, lead, body, caption typography.
-- [ ] Implement `<MarkdownBlock/>`: GFM rendering, auto-heading IDs, tables, task lists.
-- [ ] Implement `<CodeSampleBlock/>`: Syntax highlighting, language badges, line highlights, copy button.
+- [ ] Implement `<MarkdownBlock/>`: GFM parsing via `markdown-to-jsx` with auto-slugified heading anchors.
+- [ ] Implement `<CodeSampleBlock/>`: `prismjs` syntax highlighter with language badges and copy-to-clipboard button.
 - [ ] Implement `<ApiEndpointBlock/>`: Method badge (`GET`, `POST`, `PUT`, `DELETE`), path header, query/header/body parameter tables, response status cards.
-- [ ] Implement `<CalloutBlock/>`: Variants (`info`, `warning`, `tip`, `danger`), icon mapping, accessible container.
+- [ ] Implement `<CalloutBlock/>`: Alert banners with Lucide icons (`info`, `warning`, `tip`, `danger`).
 - [ ] Implement `<StepperBlock/>`: Step navigation, active step indicators, collapsible/sequential views.
 - [ ] Create `client/blocks/defaultRegistry.ts` mapping block types to component renderers.
-- [ ] Add unit tests for block components.
+- [ ] Author test suite `tests/blocks/blocks.test.tsx`.
+- [ ] **Gate Verification**: Execute `npm run test:blocks && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 3: Admin Template Builder ([`03-admin-template-builder.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/03-admin-template-builder.md))
-- [ ] Implement `<TemplateBuilder/>` layout container with header, canvas, and property sidebar.
-- [ ] Implement template general settings (ID, template name, layout type selector).
-- [ ] Implement `<MetadataFieldEditor/>`:
-  - [ ] Add/remove metadata fields.
-  - [ ] Configure field type (`string`, `rich-text`, `code`, `select`, `array`), required toggle, options.
-- [ ] Implement `<SectionList/>` & section designer:
-  - [ ] Add, delete, and reorder sections.
-  - [ ] Multi-select tag group for `allowedBlocks`.
-  - [ ] Toggle `isRepeatable` flag.
-- [ ] Implement Template Export/Import modal with real-time JSON validation.
-- [ ] Add unit and interaction tests for `<TemplateBuilder/>`.
+### [ ] Phase 4: Admin Template Builder Engine ([`04-admin-template-builder.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/04-admin-template-builder.md))
+- [ ] Implement `<GeneralSettings/>`: ID, template name, and visual layout selector radio cards.
+- [ ] Implement `<MetadataFieldEditor/>`: Dynamic metadata field schema builder with type selectors and options.
+- [ ] Implement `<SectionList/>`: Section reordering, `isRepeatable` toggle, and `allowedBlocks` multi-select chips.
+- [ ] Implement `<JsonPreviewModal/>`: Real-time JSON viewer, clipboard copy, and import validator.
+- [ ] Implement top-level `<TemplateBuilder/>` container with `onChange` and `onSave` hooks.
+- [ ] Author test suite `tests/admin/builder/builder.test.tsx`.
+- [ ] **Gate Verification**: Execute `npm run test:builder && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 4: Admin Content Form Editor ([`04-admin-content-editor.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/04-admin-content-editor.md))
-- [ ] Implement `<DocContentEditor/>` orchestrator.
-- [ ] Implement `<MetaPanel/>`: Dynamic inputs generated from `template.metadataFields`.
-- [ ] Implement `<SectionForm/>`:
-  - [ ] Render section containers based on `template.sections`.
-  - [ ] Support repeatable sections (add/remove section instance).
-- [ ] Implement `<BlockInjector/>`:
-  - [ ] Dynamic "Add Block" button displaying only `section.allowedBlocks`.
-  - [ ] Block container cards with move up, move down, duplicate, and delete actions.
-  - [ ] Block data editor sub-forms per block type.
-- [ ] Implement key stability safeguards (stable `block.id` React keys, debounced state propagation).
-- [ ] Implement live TOC preview sidebar.
-- [ ] Add unit and interaction tests for `<DocContentEditor/>`.
+### [ ] Phase 5: Admin Content Form Editor Engine ([`05-admin-content-editor.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/05-admin-content-editor.md))
+- [ ] Implement `<MetaPanel/>`: Dynamic inputs mapped to `template.metadataFields`.
+- [ ] Implement `<SectionForm/>`: Section container supporting repeatable instances and block lists.
+- [ ] Implement `<BlockInjector/>`: Context-aware "Add Block" dropdown strictly filtered by `section.allowedBlocks`.
+- [ ] Implement `<BlockItemCard/>`: Card wrapper with move up/down, duplicate, delete, and type badge.
+- [ ] Implement block sub-editors (`TextBlockEditor`, `MarkdownBlockEditor`, `CodeSampleBlockEditor`, `ApiEndpointBlockEditor`, `CalloutBlockEditor`, `StepperBlockEditor`).
+- [ ] Enforce key stability (`key={block.id}`) and debounced input updates to prevent focus loss.
+- [ ] Implement top-level `<DocContentEditor/>` container with Zod validation feedback.
+- [ ] Author test suite `tests/admin/editor/editor.test.tsx`.
+- [ ] **Gate Verification**: Execute `npm run test:editor && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 5: Client Viewer Engine & Layouts ([`05-client-viewer-engine-and-layouts.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/05-client-viewer-engine-and-layouts.md))
-- [ ] Implement `<DocRenderer/>` main entry component.
-- [ ] Implement layout shells:
-  - [ ] `<SingleColumnLayout/>`: Centered document layout with optional header/footer.
-  - [ ] `<TwoColumnLayout/>`: Left navigation sidebar, content column, right sticky TOC.
-  - [ ] `<SideBySideCodeLayout/>`: Split-screen layout (prose left, code/payloads right).
-- [ ] Implement `<BlockRenderer/>` with fallback for unregistered custom blocks.
-- [ ] Support custom block overrides via `blockRegistry` prop.
-- [ ] Support custom layout overrides via `customLayouts` prop.
-- [ ] Ensure SSR safety and hydration stability.
-- [ ] Add unit and layout snapshot tests.
+### [ ] Phase 6: Client Viewer Engine & Responsive Layouts ([`06-client-viewer-engine-and-layouts.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/06-client-viewer-engine-and-layouts.md))
+- [ ] Implement `<SingleColumnLayout/>`: Centered document layout for walkthroughs and articles.
+- [ ] Implement `<TwoColumnLayout/>`: Left navigation sidebar, center document body, right sticky TOC.
+- [ ] Implement `<SideBySideCodeLayout/>`: API layout (prose left, sticky code/payloads right).
+- [ ] Implement `<BlockRenderer/>`: Registry resolver with error boundary and unknown block fallback.
+- [ ] Implement top-level `<DocRenderer/>` orchestrator with support for `blockRegistry` and `customLayouts` overrides.
+- [ ] Author test suite `tests/client/renderer.test.tsx`.
+- [ ] **Gate Verification**: Execute `npm run test:client && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 6: Headless Hooks & Navigation ([`06-headless-hooks-and-navigation.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/06-headless-hooks-and-navigation.md))
+### [ ] Phase 7: Headless Hooks & Navigation Suite ([`07-headless-hooks-and-navigation.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/07-headless-hooks-and-navigation.md))
 - [ ] Implement `useTableOfContents`: Extracts headings from markdown and text blocks with slugs and nesting levels.
-- [ ] Implement `useScrollSpy`: Observes headings on scroll and flags current active heading ID.
-- [ ] Implement `useDocSearch`: In-memory client-side full-text search indexing across sections and blocks.
-- [ ] Implement smooth scroll-to-anchor utilities.
-- [ ] Add unit tests for headless hooks.
+- [ ] Implement `useScrollSpy`: Observes headings on scroll and tracks active heading ID.
+- [ ] Implement `useDocSearch`: In-memory full-text search indexing across sections and blocks.
+- [ ] Implement `useAnchorScroll`: Smooth anchor scrolling with sticky header offset.
+- [ ] Author test suite `tests/hooks/hooks.test.ts`.
+- [ ] **Gate Verification**: Execute `npm run test:hooks && npm run typecheck` (Exit 0).
 
 ---
 
-### [ ] Phase 7: Packaging, Testing & Demo Playground ([`07-packaging-testing-and-playground.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/07-packaging-testing-and-playground.md))
-- [ ] Configure build system (tsup / Vite Library Mode) for ESM + CJS + `.d.ts`.
-- [ ] Verify exports in `package.json` (`@mkr/doc-sdk`, `@mkr/doc-sdk/core`, `@mkr/doc-sdk/admin`, `@mkr/doc-sdk/client`, `@mkr/doc-sdk/hooks`).
-- [ ] Setup Vitest and React Testing Library test runner.
+### [ ] Phase 8: Packaging, Distribution & Interactive Demo Playground ([`08-packaging-and-playground.md`](file:///Users/mkr-27/Desktop/MY/MKR/doc-sdk/plans/08-packaging-and-playground.md))
+- [ ] Create root entry `index.ts` re-exporting all sub-modules.
+- [ ] Execute `tsup` build; verify output of ESM, CJS, `.d.ts`, and `styles.css`.
 - [ ] Build interactive Demo Playground app:
-  - [ ] Tab 1: Template Builder (design template).
-  - [ ] Tab 2: Content Editor (fill out documentation).
-  - [ ] Tab 3: Client Viewer (preview the rendered doc with live layout switching).
-  - [ ] Preloaded templates: API Reference, Product Walkthrough, Getting Started Guide.
-- [ ] Write end-to-end integration tests.
+  - [ ] Tab 1: Template Builder.
+  - [ ] Tab 2: Content Form Editor.
+  - [ ] Tab 3: Client Viewer.
+  - [ ] Preloaded presets for API Reference, Walkthrough, and Guides.
+- [ ] Author end-to-end integration test `tests/integration/e2e-workflow.test.tsx`.
+- [ ] **Gate Verification**: Execute `npm run test && npm run typecheck && npm run build` (Exit 0).

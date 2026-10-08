@@ -94,13 +94,15 @@ doc-sdk/
 │   └── index.ts                # Hooks public exports
 ├── plans/                      # Categorized execution roadmaps & checklist
 │   ├── checklist.md            # Master checklist & execution tracker
-│   ├── 01-core-contracts-and-schemas.md
-│   ├── 02-block-component-primitives.md
-│   ├── 03-admin-template-builder.md
-│   ├── 04-admin-content-editor.md
-│   ├── 05-client-viewer-engine-and-layouts.md
-│   ├── 06-headless-hooks-and-navigation.md
-│   └── 07-packaging-testing-and-playground.md
+│   ├── auto-development-protocol.md # Autonomous TDD & gatekeeper rules
+│   ├── 01-tooling-and-test-harness.md
+│   ├── 02-core-contracts-and-schemas.md
+│   ├── 03-block-component-primitives.md
+│   ├── 04-admin-template-builder.md
+│   ├── 05-admin-content-editor.md
+│   ├── 06-client-viewer-engine-and-layouts.md
+│   ├── 07-headless-hooks-and-navigation.md
+│   └── 08-packaging-and-playground.md
 ├── tests/                      # Automated test suite (unit, integration, contracts)
 ├── .agents/                    # Agent rules, workflows, and prompts
 │   └── rules/                  # Modular agent rules
