@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      '@mkr-29/doc-sdk': path.resolve(__dirname, '../index.ts'),
       '@mkr/doc-sdk': path.resolve(__dirname, '../index.ts'),
     },
   },

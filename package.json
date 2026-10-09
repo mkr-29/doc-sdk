@@ -1,11 +1,35 @@
 {
-  "name": "@mkr/doc-sdk",
+  "name": "@mkr-29/doc-sdk",
   "version": "0.1.0",
   "description": "Decoupled TypeScript documentation SDK with dynamic layouts, forms, and renderers",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "author": "Mayank Kumar <mkr-29>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkr-29/doc-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkr-29/doc-sdk/issues"
+  },
+  "homepage": "https://github.com/mkr-29/doc-sdk#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "documentation",
+    "react",
+    "sdk",
+    "docs",
+    "markdown",
+    "schema",
+    "api-reference",
+    "dark-mode",
+    "headless-cms"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -49,7 +73,8 @@
     "test:client": "vitest run tests/client",
     "test:hooks": "vitest run tests/hooks",
     "test:integration": "vitest run tests/integration",
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "npm run test && npm run typecheck && npm run build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
