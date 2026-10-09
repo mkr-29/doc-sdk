@@ -114,7 +114,7 @@ export function App() {
               D
             </span>
             <span style={{ fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-0.02em' }}>
-              @mkr-29/doc-sdk
+              @racinmk/doc-sdk
             </span>
           </div>
           <span

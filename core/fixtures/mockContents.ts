@@ -142,7 +142,7 @@ export const mockWalkthroughContent: DocContent = {
               {
                 stepNumber: 1,
                 title: 'Install the package',
-                content: 'Run `npm install @mkr-29/doc-sdk` in your application root.',
+                content: 'Run `npm install @racinmk/doc-sdk` in your application root.',
               },
               {
                 stepNumber: 2,

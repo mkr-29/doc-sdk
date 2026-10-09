@@ -1,4 +1,4 @@
-# @mkr-29/doc-sdk
+# @racinmk/doc-sdk
 
 [![npm version](https://img.shields.io/badge/version-0.1.0-blue.svg)](#)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-3178c6.svg)](https://www.typescriptlang.org/)
@@ -9,7 +9,7 @@
 
 A decoupled, schema-driven documentation engine and SDK for modern React and TypeScript web applications. 
 
-`@mkr-29/doc-sdk` cleanly separates documentation into three independent layers:
+`@racinmk/doc-sdk` cleanly separates documentation into three independent layers:
 1. **JSON Schema Core Contracts**: Strict compile-time TypeScript types and runtime Zod validation.
 2. **Admin Suite**: Visual **Template Builder** for layout/section architecture and a dynamic **Content Form Editor** for content authors.
 3. **Client Viewer Engine**: Flexible `<DocRenderer />` supporting responsive layouts, extensible block registries, syntax highlighting, and headless navigation hooks.
@@ -76,17 +76,17 @@ flowchart TD
 ## 📦 Installation
 
 ```bash
-npm install @mkr-29/doc-sdk react react-dom
+npm install @racinmk/doc-sdk react react-dom
 # or
-pnpm add @mkr-29/doc-sdk react react-dom
+pnpm add @racinmk/doc-sdk react react-dom
 # or
-yarn add @mkr-29/doc-sdk react react-dom
+yarn add @racinmk/doc-sdk react react-dom
 ```
 
 Import the stylesheet in your application entry point:
 
 ```typescript
-import '@mkr-29/doc-sdk/styles.css';
+import '@racinmk/doc-sdk/styles.css';
 ```
 
 ---
@@ -99,11 +99,11 @@ Render any document using `<DocRenderer />`:
 
 ```tsx
 import React from 'react';
-import { DocRenderer } from '@mkr-29/doc-sdk/client';
-import '@mkr-29/doc-sdk/styles.css';
+import { DocRenderer } from '@racinmk/doc-sdk/client';
+import '@racinmk/doc-sdk/styles.css';
 
 // Templates and content can be fetched from your API / CMS
-import { mockApiReferenceTemplate, mockApiReferenceContent } from '@mkr-29/doc-sdk/core';
+import { mockApiReferenceTemplate, mockApiReferenceContent } from '@racinmk/doc-sdk/core';
 
 export function DocumentationPage() {
   return (
@@ -127,8 +127,8 @@ Provide a dynamic authoring interface for content writers:
 
 ```tsx
 import React, { useState } from 'react';
-import { DocContentEditor } from '@mkr-29/doc-sdk/admin';
-import type { DocTemplate, DocContent } from '@mkr-29/doc-sdk/core';
+import { DocContentEditor } from '@racinmk/doc-sdk/admin';
+import type { DocTemplate, DocContent } from '@racinmk/doc-sdk/core';
 
 export function EditorPage({ template }: { template: DocTemplate }) {
   const [content, setContent] = useState<DocContent>({
@@ -163,8 +163,8 @@ Allow administrators to define layouts and section rules:
 
 ```tsx
 import React, { useState } from 'react';
-import { TemplateBuilder } from '@mkr-29/doc-sdk/admin';
-import type { DocTemplate } from '@mkr-29/doc-sdk/core';
+import { TemplateBuilder } from '@racinmk/doc-sdk/admin';
+import type { DocTemplate } from '@racinmk/doc-sdk/core';
 
 export function TemplateBuilderPage() {
   const [template, setTemplate] = useState<DocTemplate>({
@@ -213,8 +213,8 @@ Extend or override block renderers using `customBlocks`:
 
 ```tsx
 import React from 'react';
-import { DocRenderer, defaultBlockRegistry } from '@mkr-29/doc-sdk/client';
-import type { BlockRegistry, BlockProps } from '@mkr-29/doc-sdk/client';
+import { DocRenderer, defaultBlockRegistry } from '@racinmk/doc-sdk/client';
+import type { BlockRegistry, BlockProps } from '@racinmk/doc-sdk/client';
 
 const CustomBadgeBlock: React.FC<BlockProps> = ({ block }) => {
   const data = block.data as { label?: string };
@@ -245,7 +245,7 @@ export function CustomViewer({ template, content }) {
 
 ### 5. 🌗 Theming, Dark Mode & Custom Brand Colors
 
-`@mkr-29/doc-sdk` provides first-class light and dark modes with support for custom color palettes directly via component props. Both `<DocRenderer>`, `<TemplateBuilder>`, and `<DocContentEditor>` accept theme controls:
+`@racinmk/doc-sdk` provides first-class light and dark modes with support for custom color palettes directly via component props. Both `<DocRenderer>`, `<TemplateBuilder>`, and `<DocContentEditor>` accept theme controls:
 
 #### Mode Selection (`light` | `dark` | `system`)
 
@@ -320,8 +320,8 @@ Alternatively, configure mode and both color palettes in a single object:
 Implement custom navigation and search interfaces with headless hooks:
 
 ```tsx
-import { useDocSearch, useTableOfContents } from '@mkr-29/doc-sdk/hooks';
-import type { DocContent } from '@mkr-29/doc-sdk/core';
+import { useDocSearch, useTableOfContents } from '@racinmk/doc-sdk/hooks';
+import type { DocContent } from '@racinmk/doc-sdk/core';
 
 export function DocNavigation({ content }: { content: DocContent }) {
   // 1. Table of Contents
@@ -350,7 +350,7 @@ export function DocNavigation({ content }: { content: DocContent }) {
 
 ## 🛠️ Interactive Demo Playground
 
-`@mkr-29/doc-sdk` includes an interactive playground web app showcasing all 3 tabs (Builder, Editor, and Viewer) in real time:
+`@racinmk/doc-sdk` includes an interactive playground web app showcasing all 3 tabs (Builder, Editor, and Viewer) in real time:
 
 ```bash
 npm run dev

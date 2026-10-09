@@ -1,5 +1,5 @@
 {
-  "name": "@mkr-29/doc-sdk",
+  "name": "@racinmk/doc-sdk",
   "version": "0.1.0",
   "description": "Decoupled TypeScript documentation SDK with dynamic layouts, forms, and renderers",
   "type": "module",
