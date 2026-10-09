@@ -5,4 +5,4 @@ export * from './admin';
 export * from './hooks';
 
 export const SDK_NAME = '@racinmk/doc-sdk';
-export const SDK_VERSION = '0.1.0';
+export const SDK_VERSION = '0.1.1';
