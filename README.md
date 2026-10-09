@@ -243,7 +243,79 @@ export function CustomViewer({ template, content }) {
 
 ---
 
-### 5. In-Memory Search & TOC Hooks
+### 5. 🌗 Theming, Dark Mode & Custom Brand Colors
+
+`@mkr/doc-sdk` provides first-class light and dark modes with support for custom color palettes directly via component props. Both `<DocRenderer>`, `<TemplateBuilder>`, and `<DocContentEditor>` accept theme controls:
+
+#### Mode Selection (`light` | `dark` | `system`)
+
+```tsx
+// Force dark mode
+<DocRenderer template={template} content={content} theme="dark" />
+
+// Force light mode
+<DocRenderer template={template} content={content} theme="light" />
+
+// Automatically respond to system OS preference (prefers-color-scheme)
+<DocRenderer template={template} content={content} theme="system" />
+```
+
+#### Custom Brand Palettes (`lightColors` and `darkColors`)
+
+Pass custom brand colors directly into the SDK without needing external CSS rules:
+
+```tsx
+<DocRenderer
+  template={template}
+  content={content}
+  theme="dark"
+  darkColors={{
+    bg: '#0f172a',
+    surface: '#1e293b',
+    surfaceSubtle: '#334155',
+    border: '#334155',
+    text: '#f8fafc',
+    textMuted: '#94a3b8',
+    primary: '#6366f1',
+    primaryHover: '#4f46e5',
+    primaryLight: 'rgba(99, 102, 241, 0.15)',
+    accent: '#38bdf8',
+  }}
+  lightColors={{
+    bg: '#ffffff',
+    surface: '#f8fafc',
+    surfaceSubtle: '#f1f5f9',
+    border: '#e2e8f0',
+    text: '#0f172a',
+    textMuted: '#64748b',
+    primary: '#4f46e5',
+    primaryHover: '#4338ca',
+    primaryLight: '#eef2ff',
+    accent: '#0284c7',
+  }}
+/>
+```
+
+#### Centralized `themeConfig`
+
+Alternatively, configure mode and both color palettes in a single object:
+
+```tsx
+<DocRenderer
+  template={template}
+  content={content}
+  themeConfig={{
+    mode: 'system',
+    lightColors: { primary: '#2563eb' },
+    darkColors: { primary: '#60a5fa' },
+  }}
+/>
+```
+
+---
+
+
+### 6. In-Memory Search & TOC Hooks
 
 Implement custom navigation and search interfaces with headless hooks:
 

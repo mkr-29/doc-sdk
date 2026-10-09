@@ -19,6 +19,7 @@
 | **6** | **Client Viewer Engine & Layouts** | ✅ Completed | `npm run test:client && npm run typecheck` |
 | **7** | **Headless Hooks & Navigation Suite** | ✅ Completed | `npm run test:hooks && npm run typecheck` |
 | **8** | **Packaging, Distribution & Playground** | ✅ Completed | `npm run test && npm run typecheck && npm run build` |
+| **9** | **Theming, Dark/Light Mode & UI Modernization** | ✅ Completed | `npm run test && npm run typecheck && npm run build` |
 
 ---
 
@@ -135,3 +136,18 @@
   - [x] Tab 3: Client Viewer.
   - [x] Preloaded presets for API Reference, Walkthrough, and Guides.
 - [x] Author end-to-end integration test `tests/integration/e2e-workflow.test.tsx`.
+
+---
+
+### [x] Phase 9: Theming, First-Class Dark/Light Modes & Professional UI Modernization
+- [x] Implement theme types (`ThemeMode`, `DocSdkThemeColors`, `DocSdkThemeConfig`) in `core/types.ts`.
+- [x] Implement `themeColorsToCssVariables` mapping and `useTheme` hook with system query listener in `client/theme.ts`.
+- [x] Re-export theme utilities and types from `client/index.ts` and root `index.ts`.
+- [x] Overhaul CSS token architecture in `client/styles/doc-sdk.css` for both light mode, dark mode, and scoped `.doc-sdk-root` instances.
+- [x] Elevate UI styling: Active scroll-spy navigation pills, refined code snippets, badge borders, callout tinting, and stepper node rings.
+- [x] Add `theme`, `themeConfig`, `lightColors`, `darkColors` props to `<DocRenderer/>`, `<TemplateBuilder/>`, and `<DocContentEditor/>`.
+- [x] Integrate active scroll-spy navigation highlighting into `<TwoColumnLayout/>`.
+- [x] Upgrade interactive playground studio with live theme toggle, brand color pickers, and URL query param state.
+- [x] Visually verify UI in browser across light mode, dark mode, builder, and editor via headless Chrome screenshots.
+- [x] Verify consumer application integration at `/test/sdk-test` with zero build or type errors.
+- [x] **Gate Verification**: Execute `npm run test && npm run typecheck && npm run build` (Exit 0).
