@@ -1,6 +1,6 @@
 # @racinmk/doc-sdk
 
-[![npm version](https://img.shields.io/badge/version-0.1.1-blue.svg)](https://www.npmjs.com/package/@racinmk/doc-sdk)
+[![npm version](https://img.shields.io/badge/version-0.1.2-blue.svg)](https://www.npmjs.com/package/@racinmk/doc-sdk)
 [![Live Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://doc-sdk-demo.netlify.app)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e01f801-69a3-41a6-bbff-18dd06c28faa/deploy-status)](https://app.netlify.com/projects/doc-sdk-demo/deploys)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-3178c6.svg)](https://www.typescriptlang.org/)
