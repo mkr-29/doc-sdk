@@ -5,6 +5,7 @@ import { safeValidateContent, type DocContent, type BlockContent } from '../../c
 import type { DocContentEditorProps } from './types';
 import { MetaPanel } from './MetaPanel';
 import { SectionForm } from './SectionForm';
+import { useTheme } from '../../client/theme';
 
 export const DocContentEditor: FC<DocContentEditorProps> = ({
   template,
@@ -12,6 +13,11 @@ export const DocContentEditor: FC<DocContentEditorProps> = ({
   onChange,
   onSave,
   className,
+  style,
+  theme,
+  themeConfig,
+  lightColors,
+  darkColors,
 }) => {
   const [content, setContent] = useState<DocContent>(() => {
     if (initialContent) return initialContent;
@@ -24,6 +30,13 @@ export const DocContentEditor: FC<DocContentEditorProps> = ({
         blocks: [],
       })),
     };
+  });
+
+  const { activeTheme, themeStyle } = useTheme({
+    theme,
+    themeConfig,
+    lightColors,
+    darkColors,
   });
 
   const validationResult = safeValidateContent(content);
@@ -62,7 +75,11 @@ export const DocContentEditor: FC<DocContentEditorProps> = ({
   };
 
   return (
-    <div className={clsx('doc-sdk-content-editor', className)}>
+    <div
+      className={clsx('doc-sdk-root', 'doc-sdk-content-editor', `doc-sdk-${activeTheme}`, className)}
+      data-theme={activeTheme}
+      style={{ ...themeStyle, ...style }}
+    >
       {/* Header bar */}
       <div
         style={{

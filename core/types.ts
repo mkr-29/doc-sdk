@@ -150,3 +150,46 @@ export interface DocContent {
   metadata: Record<string, unknown>;
   sections: SectionContent[];
 }
+
+/* -------------------------------------------------------------------------- */
+/* Theme & Styling Data Contracts                                             */
+/* -------------------------------------------------------------------------- */
+
+export type ThemeMode = 'light' | 'dark' | 'system';
+
+export interface DocSdkThemeColors {
+  bg?: string;
+  surface?: string;
+  surfaceHover?: string;
+  surfaceActive?: string;
+  border?: string;
+  borderFocus?: string;
+  text?: string;
+  textMuted?: string;
+  textSubtle?: string;
+  primary?: string;
+  primaryHover?: string;
+  primaryLight?: string;
+  primaryContrast?: string;
+  info?: string;
+  infoBg?: string;
+  infoBorder?: string;
+  warning?: string;
+  warningBg?: string;
+  warningBorder?: string;
+  tip?: string;
+  tipBg?: string;
+  tipBorder?: string;
+  danger?: string;
+  dangerBg?: string;
+  dangerBorder?: string;
+  codeBg?: string;
+  codeText?: string;
+  codeBorder?: string;
+}
+
+export interface DocSdkThemeConfig {
+  mode?: ThemeMode;
+  lightColors?: Partial<DocSdkThemeColors>;
+  darkColors?: Partial<DocSdkThemeColors>;
+}

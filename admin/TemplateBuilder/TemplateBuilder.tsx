@@ -7,6 +7,7 @@ import { GeneralSettings } from './GeneralSettings';
 import { MetadataFieldEditor } from './MetadataFieldEditor';
 import { SectionList } from './SectionList';
 import { JsonPreviewModal } from './JsonPreviewModal';
+import { useTheme } from '../../client/theme';
 
 const DEFAULT_INITIAL_TEMPLATE: DocTemplate = {
   id: 'custom-template',
@@ -36,11 +37,23 @@ export const TemplateBuilder: FC<TemplateBuilderProps> = ({
   onChange,
   onSave,
   className,
+  style,
+  theme,
+  themeConfig,
+  lightColors,
+  darkColors,
 }) => {
   const [template, setTemplate] = useState<DocTemplate>(
     initialTemplate || DEFAULT_INITIAL_TEMPLATE
   );
   const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
+
+  const { activeTheme, themeStyle } = useTheme({
+    theme,
+    themeConfig,
+    lightColors,
+    darkColors,
+  });
 
   const validationResult = safeValidateTemplate(template);
   const isValid = validationResult.success;
@@ -63,7 +76,11 @@ export const TemplateBuilder: FC<TemplateBuilderProps> = ({
   };
 
   return (
-    <div className={clsx('doc-sdk-template-builder', className)}>
+    <div
+      className={clsx('doc-sdk-root', 'doc-sdk-template-builder', `doc-sdk-${activeTheme}`, className)}
+      data-theme={activeTheme}
+      style={{ ...themeStyle, ...style }}
+    >
       {/* Top Header Bar */}
       <div
         style={{

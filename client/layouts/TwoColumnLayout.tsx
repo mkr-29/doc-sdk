@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import clsx from 'clsx';
 import type { LayoutComponentProps } from '../../core';
 import { BlockRenderer } from '../DocRenderer/BlockRenderer';
+import { useScrollSpy } from '../../hooks/useScrollSpy';
 
 export const TwoColumnLayout: FC<LayoutComponentProps> = ({
   template,
@@ -12,6 +13,9 @@ export const TwoColumnLayout: FC<LayoutComponentProps> = ({
 }) => {
   const metadata = content.metadata || {};
   const title = (metadata.title as string) || template.name;
+
+  const sectionIds = template.sections.map((s) => s.id);
+  const activeId = useScrollSpy(sectionIds) || sectionIds[0];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -37,7 +41,8 @@ export const TwoColumnLayout: FC<LayoutComponentProps> = ({
             <a
               key={sec.id}
               href={`#${sec.id}`}
-              className="doc-sdk-nav-link"
+              className={clsx('doc-sdk-nav-link', activeId === sec.id && 'doc-sdk-nav-link-active')}
+              aria-current={activeId === sec.id ? 'true' : undefined}
               onClick={(e) => handleLinkClick(e, sec.id)}
             >
               {sec.title}
@@ -107,7 +112,8 @@ export const TwoColumnLayout: FC<LayoutComponentProps> = ({
             <a
               key={sec.id}
               href={`#${sec.id}`}
-              className="doc-sdk-nav-link"
+              className={clsx('doc-sdk-nav-link', activeId === sec.id && 'doc-sdk-nav-link-active')}
+              aria-current={activeId === sec.id ? 'true' : undefined}
               onClick={(e) => handleLinkClick(e, sec.id)}
             >
               {sec.title}

@@ -1,4 +1,12 @@
-import type { DocTemplate, DocContent, BlockContent } from '../../core';
+import type { CSSProperties } from 'react';
+import type {
+  DocTemplate,
+  DocContent,
+  BlockContent,
+  ThemeMode,
+  DocSdkThemeColors,
+  DocSdkThemeConfig,
+} from '../../core';
 
 export interface DocContentEditorProps {
   template: DocTemplate;
@@ -6,6 +14,11 @@ export interface DocContentEditorProps {
   onChange?: (content: DocContent) => void;
   onSave?: (content: DocContent) => void;
   className?: string;
+  style?: CSSProperties;
+  theme?: ThemeMode;
+  themeConfig?: DocSdkThemeConfig;
+  lightColors?: Partial<DocSdkThemeColors>;
+  darkColors?: Partial<DocSdkThemeColors>;
 }
 
 export interface BlockEditorProps<T = Record<string, unknown>> {

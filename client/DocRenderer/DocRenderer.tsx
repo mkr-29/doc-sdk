@@ -1,4 +1,4 @@
-import type { FC, ComponentType } from 'react';
+import type { FC, ComponentType, CSSProperties } from 'react';
 import clsx from 'clsx';
 import {
   safeValidateTemplate,
@@ -7,8 +7,12 @@ import {
   type DocContent,
   type BlockRegistry,
   type LayoutComponentProps,
+  type ThemeMode,
+  type DocSdkThemeColors,
+  type DocSdkThemeConfig,
 } from '../../core';
 import { defaultLayoutRegistry } from '../layouts/LayoutRegistry';
+import { useTheme } from '../theme';
 
 export interface DocRendererProps {
   template: DocTemplate;
@@ -16,7 +20,12 @@ export interface DocRendererProps {
   blockRegistry?: Partial<BlockRegistry>;
   customLayouts?: Record<string, ComponentType<LayoutComponentProps>>;
   className?: string;
+  style?: CSSProperties;
   onAnchorClick?: (anchorId: string) => void;
+  theme?: ThemeMode;
+  themeConfig?: DocSdkThemeConfig;
+  lightColors?: Partial<DocSdkThemeColors>;
+  darkColors?: Partial<DocSdkThemeColors>;
 }
 
 export const DocRenderer: FC<DocRendererProps> = ({
@@ -25,7 +34,12 @@ export const DocRenderer: FC<DocRendererProps> = ({
   blockRegistry,
   customLayouts,
   className,
+  style,
   onAnchorClick,
+  theme,
+  themeConfig,
+  lightColors,
+  darkColors,
 }) => {
   // Validate data
   const templateValidation = safeValidateTemplate(template);
@@ -67,8 +81,19 @@ export const DocRenderer: FC<DocRendererProps> = ({
 
   const LayoutComponent = mergedLayouts[template.layoutType] || defaultLayoutRegistry['single-column'];
 
+  const { activeTheme, themeStyle } = useTheme({
+    theme,
+    themeConfig,
+    lightColors,
+    darkColors,
+  });
+
   return (
-    <div className={clsx('doc-sdk-viewer-engine', className)}>
+    <div
+      className={clsx('doc-sdk-root', 'doc-sdk-viewer-engine', `doc-sdk-${activeTheme}`, className)}
+      data-theme={activeTheme}
+      style={{ ...themeStyle, ...style }}
+    >
       <LayoutComponent
         template={template}
         content={content}

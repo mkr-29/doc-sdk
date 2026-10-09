@@ -135,4 +135,3 @@
   - [x] Tab 3: Client Viewer.
   - [x] Preloaded presets for API Reference, Walkthrough, and Guides.
 - [x] Author end-to-end integration test `tests/integration/e2e-workflow.test.tsx`.
-- [x] **Gate Verification**: Execute `npm run test && npm run typecheck && npm run build` (Exit 0).
