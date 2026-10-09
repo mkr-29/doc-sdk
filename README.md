@@ -1,6 +1,8 @@
 # @racinmk/doc-sdk
 
 [![npm version](https://img.shields.io/badge/version-0.1.0-blue.svg)](#)
+[![Live Demo](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://doc-sdk-demo.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6e01f801-69a3-41a6-bbff-18dd06c28faa/deploy-status)](https://app.netlify.com/projects/doc-sdk-demo/deploys)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-3178c6.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61dafb.svg)](https://react.dev/)
 [![Zod](https://img.shields.io/badge/Schema-Zod%203.23+-3068b7.svg)](https://zod.dev/)
@@ -13,6 +15,8 @@ A decoupled, schema-driven documentation engine and SDK for modern React and Typ
 1. **JSON Schema Core Contracts**: Strict compile-time TypeScript types and runtime Zod validation.
 2. **Admin Suite**: Visual **Template Builder** for layout/section architecture and a dynamic **Content Form Editor** for content authors.
 3. **Client Viewer Engine**: Flexible `<DocRenderer />` supporting responsive layouts, extensible block registries, syntax highlighting, and headless navigation hooks.
+
+> 🚀 **Live Interactive Demo**: Try the deployed studio live on Netlify at [**doc-sdk-demo.netlify.app**](https://doc-sdk-demo.netlify.app) with real-time multi-layout switching, visual template building, dynamic form editing, and dark mode themer.
 
 ---
 
@@ -350,16 +354,20 @@ export function DocNavigation({ content }: { content: DocContent }) {
 
 ## 🛠️ Interactive Demo Playground
 
-`@racinmk/doc-sdk` includes an interactive playground web app showcasing all 3 tabs (Builder, Editor, and Viewer) in real time:
+- 🌐 **Live Web Demo**: [https://doc-sdk-demo.netlify.app](https://doc-sdk-demo.netlify.app)
+- 📦 **Demo GitHub Repo**: [https://github.com/mkr-29/doc-sdk-demo](https://github.com/mkr-29/doc-sdk-demo)
+
+`@racinmk/doc-sdk` also includes an interactive playground web app showcasing all 3 tabs (Builder, Editor, and Viewer) locally:
 
 ```bash
 npm run dev
 ```
 
-Visit `http://localhost:3000` to:
+Visit the local server to:
 - Switch between pre-configured presets (API Reference, Walkthrough, Side-by-Side Code).
 - Edit schemas in the **Template Builder** and watch the **Content Editor** adapt.
 - Edit content blocks and test real-time rendering and in-memory search in the **Client Viewer**.
+- Customize theme mode (Dark/Light) and primary brand palette dynamically.
 
 ---
 
