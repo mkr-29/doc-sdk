@@ -1,6 +1,6 @@
 {
   "name": "@racinmk/doc-sdk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Decoupled TypeScript documentation SDK with dynamic layouts, forms, and renderers",
   "type": "module",
   "main": "./dist/index.cjs",
